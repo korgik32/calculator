@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+
+.container {
+
+    width: 100%;
+    display: flex;
+}
+.page {
+    position: relative;
+    display: flex;
+    flex: 0 1 50%;
+    background-color: rgb(92, 92, 92);
+    max-width: 500px;
+    min-width: 320px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.log {
+    position: absolute;
+    left: 100%;
+    flex: 0 1 100%;
+    background-color: rgb(192, 185, 185);
+    max-width: 500px;
+    min-width: 250px;
+    height: 450px;
+    word-break: break-all;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 1px;
+    padding: 4px;
+}
+@media(max-width: 660px) {
+    .page {
+        position: static;
+        flex-wrap: wrap;
+        
+    }
+    .log{
+        
+        position:static;
+        left: 0%;
+        border-radius: 5px;
+    }
+    .calc{
+        margin: 0px 0px 33px 0px;
+    }
+}
+.calc {
+    width: 100%;
+    height: auto;
+    
+    padding: 20px 20px 0px 20px;
+}
+
+.calc__display {
+    background-color: rgb(72, 167, 230);
+    height: 80px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0px 10px 0px 10px;
+    overflow: hidden;
+}
+@media(max-width: 900px) {
+    .calc__display{
+        align-items: center;
+    }
+}
+.calc__buttons {
+    padding: 20px 0px 0px 0px;
+}
+
+.calc__row {
+    display: flex;
+}
+.calc__button {
+    user-select: none;
+    display: flex;
+    margin: 10px;
+    flex: 1 1 25%;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(150, 150, 150);
+    &:active {
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    }
+}
+
+.blue-button {
+    background-color: rgb(72, 167, 230);
+}
+
+.red-button {
+    background-color: rgb(255, 107, 107);
+}
+
+.small-button {
+    font-size: 25px;
+}
+
+.log__list{
+    list-style: none;
+}
+.list__item{
+    padding-bottom:10px;
+    padding-left: 10px;
+}
+
+.test{
+    
+}
