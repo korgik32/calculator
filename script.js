@@ -168,7 +168,9 @@ onload = () => {
         let result = [];
         let tempString = arr.join("");
         try {
-            result = eval(tempString);
+            result = String(eval(tempString));
+
+
         }
         catch (err) {
             console.log('ошибка');
@@ -215,16 +217,19 @@ onload = () => {
         if (tempArray.indexOf('√') != -1) {
             let posEnd;
             let posBegin = tempArray.indexOf('√');
+            //костыль
+            let crutch = 0;
             //поставить знак * перед корнем если его нет
             if (tempArray[posBegin - 1] === '0' || tempArray[posBegin - 1] === '1' || tempArray[posBegin - 1] === '2' || tempArray[posBegin - 1] === '3' ||
                 tempArray[posBegin - 1] === '4' || tempArray[posBegin - 1] === '5' || tempArray[posBegin - 1] === '6' || tempArray[posBegin - 1] === '7' ||
                 tempArray[posBegin - 1] === '8' || tempArray[posBegin - 1] === '9') {
-
                 tempArray.splice(posBegin, 0, "*");
+                //костыль
+                crutch++;
             }
             //заменить значок корня
-            tempArray[posBegin + 1] = "Math.sqrt(";
-            let i = posBegin + 2;
+            tempArray[posBegin + crutch] = "Math.sqrt(";
+            let i = posBegin + 1 + crutch;
             while (1) {
                 if (tempArray[i] == '0' || tempArray[i] === '1' || tempArray[i] === '2' || tempArray[i] === '3' ||
                     tempArray[i] === '4' || tempArray[i] === '5' || tempArray[i] === '6' || tempArray[i] === '7' ||
@@ -383,12 +388,12 @@ onload = () => {
                 tempArray.push(item);
                 tempArray.shift();
                 localStorage.setItem("history", JSON.stringify(tempArray));
-                console.log(tempArray.length, "tempArray.length");
+
             }
             else {
                 tempArray.push(item);
                 localStorage.setItem("history", JSON.stringify(tempArray));
-                console.log(tempArray.length, "tempArray.length");
+
             }
         }
 
@@ -398,8 +403,13 @@ onload = () => {
 
     printLocalStorage();
 
-    let power = "ssdsfsdfsdfs";
-    console.log('sex');
+
+    document.querySelector(".bi").addEventListener("click", () => {
+        document.querySelector(".bi").innerHTML = "";
+
+        document.querySelector(".bi").innerHTML += arrayNumbers;
+    })
+
 
 
 }
