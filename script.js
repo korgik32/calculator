@@ -164,7 +164,6 @@ onload = () => {
         let tempFull = arr.join("");
 
         parser(arr);
-        console.log(arr, "calculate");
         let result = [];
         let tempString = arr.join("");
         try {
@@ -181,7 +180,7 @@ onload = () => {
         //строка со всеми символами
 
         arr.length = 1;
-        arr[0] = result.split("");
+        arr[0] = result;
 
 
         if (!tempFull) {
@@ -250,7 +249,7 @@ onload = () => {
                 arr[i] = elem;
             })
             arr.splice(posEnd, 0, ")");
-            console.log(arrayNumbers.join(""));
+
         }
         else return;
 
@@ -296,16 +295,16 @@ onload = () => {
             tempFirstElemArray.forEach(elem => {
                 tempArray.unshift(elem);
             })
-            console.log(tempArray, "Fdsfdsfdsfsdfsdfdsfsd");
+
             posBegin = tempArray.indexOf('%');
             //парсим уже после того как посчитано то что до %
             for (let i = posBegin - 1; i > -1; i--) {
-                console.log(tempArray[i], " counter");
+
                 if (tempArray[i] === '0' || tempArray[i] === '1' || tempArray[i] === '2' || tempArray[i] === '3' ||
                     tempArray[i] === '4' || tempArray[i] === '5' || tempArray[i] === '6' || tempArray[i] === '7' ||
                     tempArray[i] === '8' || tempArray[i] === '9' || tempArray[i] === '.') {
                     //тут надо что то делать
-                    console.log(tempArray[i], " внутри");
+
                     if (counter1 == 0) {
                         num2.unshift(tempArray[i]);
                     }
@@ -319,12 +318,10 @@ onload = () => {
 
             }
             tempArray[posBegin] = `/100*${num1.join("")}`;
-            console.log(num1);
-            console.log(num2);
+            /*             console.log(num1);
+                        console.log(num2); */
 
-            /* for (let i = arr.length; i > 0; i--) {
-                let sex = arr.pop();
-            } */
+
             arr.length = 1;
             tempArray.forEach((elem, i) => {
                 arr[i] = elem;
@@ -374,7 +371,7 @@ onload = () => {
     }
 
     function saveToLocalStorage(item) {
-        console.log(item);
+
 
         if (item == null) return;
         if (localStorage.getItem("history") == null) {
@@ -405,13 +402,13 @@ onload = () => {
 
     printLocalStorage();
 
-
-    document.querySelector(".bi").addEventListener("click", () => {
-        document.querySelector(".bi").innerHTML = "";
-
-        document.querySelector(".bi").innerHTML += arrayNumbers;
-    })
-
+    /* 
+        document.querySelector(".bi").addEventListener("click", () => {
+            document.querySelector(".bi").innerHTML = "";
+    
+            document.querySelector(".bi").innerHTML += arrayNumbers;
+        })
+     */
 
 
 }
