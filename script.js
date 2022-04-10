@@ -181,7 +181,9 @@ onload = () => {
         //строка со всеми символами
 
         arr.length = 1;
-        arr[0] = result;
+        arr[0] = result.split("");
+
+
         if (!tempFull) {
             tempFull = null;
         }
