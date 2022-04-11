@@ -168,7 +168,7 @@ onload = () => {
         let tempString = arr.join("");
         try {
             result = String(eval(tempString));
-
+            result.length;
 
         }
         catch (err) {
@@ -180,7 +180,10 @@ onload = () => {
         //строка со всеми символами
 
         arr.length = 1;
-        arr[0] = result;
+        for (let i = 0; i < result.length; i++) {
+            arr[i] = result[i];
+        }
+
 
 
         if (!tempFull) {
@@ -402,13 +405,6 @@ onload = () => {
 
     printLocalStorage();
 
-    /* 
-        document.querySelector(".bi").addEventListener("click", () => {
-            document.querySelector(".bi").innerHTML = "";
-    
-            document.querySelector(".bi").innerHTML += arrayNumbers;
-        })
-     */
 
 
 }
